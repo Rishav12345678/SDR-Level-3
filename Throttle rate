@@ -1,0 +1,12 @@
+id: blocks_throttle
+(...)    
+    dtype: ${ uhd }
+    vlen: ${ 32000 }
+
+asserts:
+- ${ vlen > 0 }
+
+templates:
+    imports: from gnuradio import blocks
+    make: blocks.throttle(${type.size}*${vlen}, ${23000/sec},${ignoretag})
+(...)
