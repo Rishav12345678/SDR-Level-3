@@ -1,0 +1,14 @@
+emplates
+id: blocks_message_strobe_random
+(...)
+    optional: true
+
+templates:
+    imports: |-
+        from gnuradio import blocks
+        import pmt
+    make: blocks.message_strobe_random(${msg}, ${dist}, ${mean}, ${std})
+    callbacks:
+    - set_msg(${msg})
+    - set_dist(${dist})
+(...)
